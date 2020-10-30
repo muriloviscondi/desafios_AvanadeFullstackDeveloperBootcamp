@@ -7,6 +7,7 @@ namespace _5_PedroBentoMundoOz
         static void Main(string[] args)
         {
             int countJewels = 0;
+            string countCaracteres = "";
 
             string[] jewels = new string[5];
             string[] differentJewelry = new string[5];
@@ -14,6 +15,12 @@ namespace _5_PedroBentoMundoOz
             for (int i = 0; i < jewels.Length; i++)
             {
                 jewels[i] = Console.ReadLine();
+                countCaracteres += jewels[i];
+
+                if (countCaracteres.Length > 106)
+                {
+                    break;
+                }
 
                 if (i == 0)
                 {
