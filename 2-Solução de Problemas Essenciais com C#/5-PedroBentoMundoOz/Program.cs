@@ -6,55 +6,39 @@ namespace _5_PedroBentoMundoOz
     {
         static void Main(string[] args)
         {
-            int countJewels = 0;
-            string countCaracteres = "";
+            string checkJowels = Console.ReadLine();
+            string[] jowels = new string[200];
+            string countString = "";
+            int countJowels = 0;
+            int countArray = 0;
 
-            string[] jewels = new string[5];
-            string[] differentJewelry = new string[5];
-
-            for (int i = 0; i < jewels.Length; i++)
+            while (checkJowels != null)
             {
-                jewels[i] = Console.ReadLine();
-                countCaracteres += jewels[i];
+                if(countArray == 0) {
 
-                if (countCaracteres.Length > 106)
+                countJowels++;
+                } else {
+                bool status = true;
+
+                for(int i = 0; i < jowels.Length; i++)
                 {
-                    break;
+                    if(checkJowels == jowels[i])
+                    {
+                        status = false;
+                    }
                 }
 
-                if (i == 0)
+                if (status)
                 {
-                    differentJewelry[i] = jewels[i];
-                }
-                else
-                {
-                    countJewels = 0;
-                    for(int j = 0; j < i; j++)
-                    {
-                        if (jewels[j] == jewels[i])
-                        {
-                            countJewels++;
-                        }
-
-                    }
-
-                    if (countJewels == 0)
-                    {
-                        differentJewelry[i] = jewels[i];
-                    }
+                    countJowels++;
                 }
             }
 
-            int count = 0;
-            for (int i = 0; i < differentJewelry.Length; i++)
-            {
-                if (differentJewelry[i] != null)
-                {
-                    count++;
-                }
+                jowels[countArray] = checkJowels;
+                countArray++;
+                checkJowels = Console.ReadLine();
             }
-
-            Console.WriteLine(count);
+            Console.WriteLine(countJowels);
         }
     }
 }
