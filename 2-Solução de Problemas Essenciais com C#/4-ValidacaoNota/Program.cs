@@ -15,7 +15,7 @@ namespace _4_ValidacaoNota
 
                 if (0 > enterGrade || 10 < enterGrade)
                 {
-                    
+                    Console.WriteLine("nota invalida");
                 }
                 else
                 {
