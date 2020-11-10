@@ -5,8 +5,8 @@ const words = []
 
 while (readIn !== "") {
   words.push({
-    "letter": readIn.normalize("NFD").replace(/[^0-9a-zA-Z]/g, "").split(""), 
-    "treatedLetter": read.normalize("NFD").replace(/[^0-9a-zA-Z]/g, "").split("")
+    "letter": readIn.split(""), 
+    "treatedLetter": read.split("")
   })
   readIn = gets()
   read = gets()
@@ -25,9 +25,3 @@ words.forEach(word => {
   })
   console.log(count)
 })
-
-
-
-
-
-
