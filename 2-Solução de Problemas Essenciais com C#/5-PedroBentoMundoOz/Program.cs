@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
 
 namespace _5_PedroBentoMundoOz
 {
@@ -6,39 +7,24 @@ namespace _5_PedroBentoMundoOz
     {
         static void Main(string[] args)
         {
-            string checkJowels = Console.ReadLine();
-            string[] jowels = new string[200];
-            string countString = "";
-            int countJowels = 0;
-            int countArray = 0;
+            List<string> jowels = new List<string>();
 
-            while (checkJowels != null)
+            while (true)
             {
-                if(countArray == 0) {
+                string line = Console.ReadLine();
 
-                countJowels++;
-                } else {
-                bool status = true;
-
-                for(int i = 0; i < jowels.Length; i++)
+                if (line == null || line == "")
                 {
-                    if(checkJowels == jowels[i])
-                    {
-                        status = false;
-                    }
+                    break;
                 }
 
-                if (status)
+                if (!jowels.Contains(line))
                 {
-                    countJowels++;
+                    jowels.Add(line);
                 }
             }
 
-                jowels[countArray] = checkJowels;
-                countArray++;
-                checkJowels = Console.ReadLine();
-            }
-            Console.WriteLine(countJowels);
+            Console.WriteLine(jowels.Count);
         }
     }
 }
